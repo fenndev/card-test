@@ -25,21 +25,17 @@ const Card = new Schema({
     cost: {
         type: Object,
         required: true,
-        amount: Number,
+        value: Number,
         color: String,
         default: {
-            amount: 0,
+            value: 0,
             color: 'null'
         }
     },
     image: {
         type: String,
         required: true,
-        path: String,
-        default: {
-            path: 'localhost:3000/images/placeholder.png'
-        }
+        default: 'localhost:3000/images/placeholder.png'
     }
 });
-
-module.exports;
+module.exports = mongoose.model("Card", Card);
